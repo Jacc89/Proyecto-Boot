@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,10 @@ import { RegisterPagesComponent } from './components/pages/register-pages/regist
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// modulo personalisado para las listas
+import { ListsModule } from './modules/lists/lists.module';
+import { ListContactComponent } from './components/contacto/list-contact/list-contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +32,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     LoginPagesComponent,
     RegisterPagesComponent,
-    NotFoundPagesComponent
+    NotFoundPagesComponent,
+    ListContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ListsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

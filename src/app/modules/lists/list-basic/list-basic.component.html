@@ -1,0 +1,29 @@
+<p>list-basic works!</p>
+<!-- ngSwich -->
+
+<!-- usuario -->
+<div>
+
+    <label for="">Escoja una opción </label><br>
+    <div  [ngSwitch]="opcion">
+        <p [id]="1" *ngSwitchCase="1"> Has escogido la  Opcion  1   </p>
+        <p [id]="2" *ngSwitchCase="2"> Has escogido la  Opcion  2   </p>
+        <p [id]="3" *ngSwitchCase="3"> Has escogido la  Opcion  3   </p>
+        <p [id]="4" *ngSwitchCase="4"> Has escogido la  Opcion  4   </p>
+        <p [id]="5" *ngSwitchCase="5"> Has escogido la  Opcion  5   </p>
+        <p *ngSwichDefault class="cerrar"> <mat-spinner *ngIf="escogerOpcion(opcion)"></mat-spinner></p>
+    
+    </div>
+    
+        <input type="radio" name="opcion" (click)="escogerOpcion(1)" > Opcion 1
+        <input type="radio" name="opcion" (click)="escogerOpcion(2)" > Opcion 2
+        <input type="radio" name="opcion" (click)="escogerOpcion(3)" > Opcion 3
+        <input type="radio" name="opcion" (click)="escogerOpcion(4)" > Opcion 4
+        <input type="radio" name="opcion" (click)="escogerOpcion(5)" > Opcion 5
+        <input type="radio" selected="selected" name="opcion" (click)="escogerOpcion(0)" /> Ocultar
+   
+</div>
+
+<!-- spinner -->
+
+<mat-spinner *ngIf="escogerOpcion(opcion)"></mat-spinner>
